@@ -1,5 +1,6 @@
 let doublesPlayerNum = 20
-let doublesCourtNum = 5
+let doublesCourtNum = 4
+let doublesGroupNum = 4
 
 function getNumsPlayers(doublesPlayerNum) {
     // get numbers of players
@@ -20,13 +21,10 @@ function getNumsCourts(doublesCourtNum) {
     return doublesCourtNumArr;
 }
 
-function doublesPlayerNumGenerator() {
-    console.log(getNumsPlayers(doublesPlayerNum))
-    console.log(getNumsCourts(doublesCourtNum))
-    
+function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
+    let gropsInArray = Array.from({ length: doublesCourtNum }, () => doublesPlayerNum.splice(0, doublesGroupNum));
+    console.log(gropsInArray[0].length)
+    return gropsInArray
 }
-// console.log(getNumsPlayers(doublesPlayerNum))
-// console.log(getNumsCourts(doublesCourtNum))
 
-// console.log(getNumsCourts(doublesCourtNum))
-doublesPlayerNumGenerator()
+console.log(doublesPlayerGropsGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
