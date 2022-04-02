@@ -21,6 +21,7 @@ function getNumsCourts(doublesCourtNum) {
 }
 
 function doublesPlayerNumGenerator() {
+    let doublesCourtNumArr
     console.log(getNumsPlayers(doublesPlayerNum))
     console.log(getNumsCourts(doublesCourtNum))
     
