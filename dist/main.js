@@ -1,6 +1,7 @@
-let doublesPlayerNum = 23
-let doublesCourtNum = 5
+let doublesPlayerNum = 24
+let doublesCourtNum = 6
 let doublesGroupNum = 4
+let doublesPairNum = 2
 
 let doublesNumsArr = []
 
@@ -12,7 +13,7 @@ function getNumsPlayers(doublesPlayerNum) {
     }
     return doublesPlayerNumArr;
 }
-
+getNumsPlayers(doublesPlayerNum)
 
 function getNumsCourts(doublesCourtNum) {
     // get amounts of courts
@@ -25,17 +26,9 @@ function getNumsCourts(doublesCourtNum) {
 
 // let secondGroup
 
-function randamizePlayers(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
-    let secondArr
-    for (let i = 0; i < doublesPlayerNum.length; i++) {
-        secondArr = Array.from({ length: doublesCourtNum }, () => doublesPlayerNum.splice(i, doublesGroupNum),
-        doublesPlayerNum.splice(i+2, doublesGroupNum))
-        return secondArr
-    }
 
 
-}
-console.log(randamizePlayers(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+
 
 function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
     let gropsInArray
@@ -47,7 +40,23 @@ function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesC
     return gropsInArray
 
 }
-
-
-
 // console.log(doublesPlayerGropsGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+
+
+
+function doublesPlayerGropsSecondRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
+    // console.log(doublesPlayerNum)
+    let gropsInSecondArray = []
+
+    for (let i = 0; i < doublesPlayerNum.length; i += 2) {
+        gropsInSecondArray.push(doublesPlayerNum.slice(i, i + 2))
+
+        
+    }
+    console.log(gropsInSecondArray.length)
+    return gropsInSecondArray
+
+}
+
+console.log(doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+
