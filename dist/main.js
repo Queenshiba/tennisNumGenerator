@@ -44,6 +44,8 @@ function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesC
 
 
 
+
+
 function doublesPlayerGropsSecondRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
     // console.log(doublesPlayerNum)
     let gropsInSecondArray = []
@@ -51,12 +53,29 @@ function doublesPlayerGropsSecondRoundGenerator(doublesPlayerNum, doublesGroupNu
     for (let i = 0; i < doublesPlayerNum.length; i += 2) {
         gropsInSecondArray.push(doublesPlayerNum.slice(i, i + 2))
 
-        
+
     }
     console.log(gropsInSecondArray.length)
     return gropsInSecondArray
 
 }
 
-console.log(doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+// console.log(doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
 
+let arr = doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum)
+let testarr = []
+let testarr2 = []
+let arrhalflength = arr.length/2
+for (let k = 0; k < arr.length/2; k++) {
+    testarr.push(arr[k])
+}
+for (let l = arr.length/2; l < arr.length; l++) {
+    testarr2.push(arr[l])
+    
+}
+
+testarr[0].push(testarr2[0][0])
+testarr[0].push(testarr2[0][1])
+
+console.log(testarr)
+console.log(testarr2)
