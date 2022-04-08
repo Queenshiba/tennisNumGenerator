@@ -24,13 +24,8 @@ function getNumsCourts(doublesCourtNum) {
     return doublesCourtNumArr;
 }
 
-// let secondGroup
-
-
-
-
-
-function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
+// first round 
+function doublesFirstRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
     let gropsInArray
     if (doublesPlayerNum % doublesCourtNum) {
         gropsInArray = Array.from({ length: doublesCourtNum }, () => doublesPlayerNum.splice(0, doublesGroupNum));
@@ -40,42 +35,41 @@ function doublesPlayerGropsGenerator(doublesPlayerNum, doublesGroupNum, doublesC
     return gropsInArray
 
 }
-// console.log(doublesPlayerGropsGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+// console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
 
 
 
-
-
-function doublesPlayerGropsSecondRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
-    // console.log(doublesPlayerNum)
-    let gropsInSecondArray = []
+function doublesSecondRoundGenerator(doublesPlayerNum) {
+    let secondRoundPairArray = []
 
     for (let i = 0; i < doublesPlayerNum.length; i += 2) {
-        gropsInSecondArray.push(doublesPlayerNum.slice(i, i + 2))
-
+        secondRoundPairArray.push(doublesPlayerNum.slice(i, i + 2))
 
     }
-    console.log(gropsInSecondArray.length)
-    return gropsInSecondArray
+    return secondRoundPairArray
 
 }
 
-// console.log(doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+// console.log(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)))
 
-let arr = doublesPlayerGropsSecondRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum)
-let testarr = []
-let testarr2 = []
-let arrhalflength = arr.length/2
-for (let k = 0; k < arr.length/2; k++) {
-    testarr.push(arr[k])
+
+function SecondRoundNumRondomizer(secondRoundPairArray) {
+
+    let firstHalfPair = []
+    let lastHalfPair = []
+    let secondRoundPairArrayLength = secondRoundPairArray.length;
+    for (let z = 0; z < 4; z++) {
+        for (let k = 0; k < secondRoundPairArrayLength / 2; k++) {
+            firstHalfPair.push(secondRoundPairArray[k])
+        }
+        for (let l = secondRoundPairArrayLength / 2; l < secondRoundPairArrayLength; l++) {
+            lastHalfPair.push(secondRoundPairArray[l])
+        }
+
+        firstHalfPair[z].push(lastHalfPair[0][z])
+        firstHalfPair[z].push(lastHalfPair[z][z+1])
+
+    }
+    console.log(firstHalfPair)
 }
-for (let l = arr.length/2; l < arr.length; l++) {
-    testarr2.push(arr[l])
-    
-}
-
-testarr[0].push(testarr2[0][0])
-testarr[0].push(testarr2[0][1])
-
-console.log(testarr)
-console.log(testarr2)
+console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum))))
