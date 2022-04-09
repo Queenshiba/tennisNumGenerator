@@ -66,10 +66,10 @@ function SecondRoundNumRondomizer(secondRoundPairArray) {
             lastHalfPair.push(secondRoundPairArray[l])
         }
 
-        firstHalfPair[z].push(lastHalfPair[0][z])
-        firstHalfPair[z].push(lastHalfPair[z][z+1])
-
+        firstHalfPair[z].push(lastHalfPair[z][0])
+        firstHalfPair[z].push(lastHalfPair[z][1])
     }
     console.log(firstHalfPair)
+    console.log(lastHalfPair)
 }
 console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum))))
