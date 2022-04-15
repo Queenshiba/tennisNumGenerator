@@ -46,12 +46,12 @@ function doublesSecondRoundGenerator(doublesPlayerNum) {
         secondRoundPairArray.push(doublesPlayerNum.slice(i, i + 2))
 
     }
-    console.log(secondRoundPairArray)
+    // console.log(secondRoundPairArray)
     return secondRoundPairArray
 
 }
 
-// console.log(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)))
+// console.log(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)),'test')
 
 function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, doublesCourtNum) {
     // console.log(secondRoundPairArray)
@@ -59,14 +59,14 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     let lastHalfPair = []
     let secondRoundPairArrayLength = secondRoundPairArray.length;
     // console.log(secondRoundPairArrayLength)
-    // for (let z = 0; z < doublesCourtNum; z++) {
+    for (let z = 0; z < doublesCourtNum; z++) {
         for (let k = 0; k < secondRoundPairArrayLength; k++) {
             firstHalfPair.push(secondRoundPairArray[k])
         }
 
-        // firstHalfPair[z].push(lastHalfPair[z][0])
-        // firstHalfPair[z].push(lastHalfPair[z][1])
-    // }
+        firstHalfPair[z].push('a')
+        firstHalfPair[z].push('b') 
+    }
 
     // console.log(firstHalfPair)
     // console.log(lastHalfPair)
