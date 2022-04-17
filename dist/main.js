@@ -1,4 +1,4 @@
-let doublesPlayerNum = 24
+let doublesPlayerNum = 25
 let doublesCourtNum = 6
 let doublesGroupNum = 4
 let doublesPairNum = 2
@@ -59,16 +59,32 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     let lastHalfPair = []
     let secondRoundPairArrayLength = secondRoundPairArray.length;
 
-    for (let k = 0; k < secondRoundPairArrayLength / 2; k++) {
-        firstHalfPair.push(secondRoundPairArray[k])
+
+    if (doublesPlayerNum / doublesCourtNum === 4) {
+        for (let k = 0; k < secondRoundPairArrayLength / 2; k++) {
+            firstHalfPair.push(secondRoundPairArray[k])
+        }
+        for (let k = secondRoundPairArrayLength / 2; k < secondRoundPairArrayLength; k++) {
+            lastHalfPair.push(secondRoundPairArray[k])
+        }
+        for (let z = 0; z < doublesCourtNum; z++) {
+            firstHalfPair[z].push(lastHalfPair[z][0])
+            firstHalfPair[z].push(lastHalfPair[z][1])
+        }
+    } else {
+        let halfLengthWithOne = Math.round(doublesPlayerNum / 2)
+        for (let k = 0; k < halfLengthWithOne; k++) {
+            firstHalfPair.push(secondRoundPairArray[k])
+        }
+        for (let k = halfLengthWithOne; k < doublesPlayerNum; k++) {
+            lastHalfPair.push(secondRoundPairArray[k])
+        }
+        for (let z = 0; z < doublesCourtNum; z++) {
+            // firstHalfPair[z].push(lastHalfPair[z][0])
+            // firstHalfPair[z].push(lastHalfPair[z][1])
+        }
     }
-    for (let k = secondRoundPairArrayLength / 2; k < secondRoundPairArrayLength; k++) {
-        lastHalfPair.push(secondRoundPairArray[k])
-    }
-    for (let z = 0; z < doublesCourtNum; z++) {
-        firstHalfPair[z].push(lastHalfPair[z][0])
-        firstHalfPair[z].push(lastHalfPair[z][1])
-    }
+
 
 
     return firstHalfPair
