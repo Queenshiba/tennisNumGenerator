@@ -57,6 +57,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
 
     let firstHalfPair = []
     let lastHalfPair = []
+    let leftover = []
     let secondRoundPairArrayLength = secondRoundPairArray.length;
 
 
@@ -74,8 +75,8 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     } else {
         // let halfLengthWithOne = Math.round(doublesPlayerNum / 4)
         let amountsofgroup = Math.floor(doublesPlayerNum / 4)
-            // let remainder = doublesPlayerNum % doublesCourtNum
-            // console.log(amountsofgroup)
+        let remainder = doublesPlayerNum % doublesCourtNum
+        // console.log(amountsofgroup)
         for (let k = 0; k < amountsofgroup; k++) {
             firstHalfPair.push(secondRoundPairArray[k])
         }
@@ -86,8 +87,11 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             firstHalfPair[z].push(lastHalfPair[z][0])
             firstHalfPair[z].push(lastHalfPair[z][1])
         }
-        // console.log("hey")
-        // console.log(lastHalfPair[1], "lastHalfPair")
+        for (let i = amountsofgroup*2; i < amountsofgroup*2 + remainder; i++) {
+            leftover.push(secondRoundPairArray[i])
+
+        }
+        console.log(leftover)
     }
     return firstHalfPair
 }
