@@ -1,4 +1,4 @@
-let doublesPlayerNum = 30
+let doublesPlayerNum = 31
 let doublesCourtNum = 7
 let doublesGroupNum = 4
 let doublesPairNum = 2
@@ -87,7 +87,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             firstHalfPair[z].push(lastHalfPair[z][0])
             firstHalfPair[z].push(lastHalfPair[z][1])
         }
-        for (let i = amountsofgroup*2; i < amountsofgroup*2 + remainder; i++) {
+        for (let i = amountsofgroup*2; i < amountsofgroup*2 + remainder/2; i++) {
             leftover.push(secondRoundPairArray[i])
 
         }
