@@ -5,6 +5,34 @@ let doublesPairNum = 2
 
 let doublesNumsArr = []
 
+// input for player numbers
+let btnAddPlayer = document.getElementById('additionPlayer');
+let btnSubstractPlayer = document.getElementById('substractPlayer');
+let numInput = document.getElementsByClassName('numInput');
+let playerNumInput = document.getElementById('playerNumInput');
+numInput.required = true;
+
+btnAddPlayer.addEventListener('click', () => {
+    playerNumInput.value = parseInt(playerNumInput.value) + 1;
+});
+btnSubstractPlayer.addEventListener('click', () => {
+    playerNumInput.value = parseInt(playerNumInput.value) - 1;
+
+});
+let btnAddCourt = document.getElementById('additionCourt');
+let btnSubstractCourt = document.getElementById('substractCourt');
+
+let courtNumInput = document.getElementById('courtNumInput');
+numInput.required = true;
+btnAddCourt.addEventListener('click', () => {;
+    courtNumInput.value = parseInt(courtNumInput.value) + 1;
+});
+btnSubstractCourt.addEventListener('click', () => {
+    courtNumInput.value = parseInt(courtNumInput.value) - 1;
+});
+
+
+
 function getNumsPlayers(doublesPlayerNum) {
     // get numbers of players
     let doublesPlayerNumArr = [];
@@ -76,7 +104,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
         // let halfLengthWithOne = Math.round(doublesPlayerNum / 4)
         let amountsofgroup = Math.floor(doublesPlayerNum / 4)
         let remainder = doublesPlayerNum % doublesCourtNum
-        // console.log(amountsofgroup)
+            // console.log(amountsofgroup)
         for (let k = 0; k < amountsofgroup; k++) {
             firstHalfPair.push(secondRoundPairArray[k])
         }
@@ -87,7 +115,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             firstHalfPair[z].push(lastHalfPair[z][0])
             firstHalfPair[z].push(lastHalfPair[z][1])
         }
-        for (let i = amountsofgroup*2; i < amountsofgroup*2 + remainder/2; i++) {
+        for (let i = amountsofgroup * 2; i < amountsofgroup * 2 + remainder / 2; i++) {
             leftover.push(secondRoundPairArray[i])
 
         }
