@@ -12,22 +12,19 @@
 <body>
     <h1>tennis number generator</h1>
     <div class="input-container">
-        <!-- <div class="player-wrap">
-            <button id="substractPlayer">-</button>
-            <input type="number" min="0" max="100" class="numInput" id="playerNumInput" placeholder="0">
-            <button id="additionPlayer">+</button>
-        </div>
-        <div class="court-wrap">
-            <button id="substractCourt">-</button>
-            <input type="number" min="0" max="100" class="numInput" id="courtNumInput" placeholder="0">
-            <button id="additionCourt">+</button>
-        </div> -->
-        <div class="number-input">
+        <div class="number-input" id="player-wrap">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
             <input class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
+        <div class="number-input" id="court-wrap">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+            <input class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        </div>
+        <button onclick="setNums">SET</button>
     </div>
+
 </body>
 <script src="./main.js"></script>
 

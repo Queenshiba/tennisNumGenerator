@@ -5,31 +5,7 @@ let doublesPairNum = 2
 
 let doublesNumsArr = []
 
-// input for player numbers
-// let btnAddPlayer = document.getElementById('additionPlayer');
-// let btnSubstractPlayer = document.getElementById('substractPlayer');
-// let numInput = document.getElementsByClassName('numInput');
-// let playerNumInput = document.getElementById('playerNumInput');
-// numInput.required = true;
 
-// btnAddPlayer.addEventListener('click', () => {
-//     playerNumInput.value = parseInt(playerNumInput.value) + 1;
-// });
-// btnSubstractPlayer.addEventListener('click', () => {
-//     playerNumInput.value = parseInt(playerNumInput.value) - 1;
-
-// });
-// let btnAddCourt = document.getElementById('additionCourt');
-// let btnSubstractCourt = document.getElementById('substractCourt');
-
-// let courtNumInput = document.getElementById('courtNumInput');
-// numInput.required = true;
-// btnAddCourt.addEventListener('click', () => {;
-//     courtNumInput.value = parseInt(courtNumInput.value) + 1;
-// });
-// btnSubstractCourt.addEventListener('click', () => {
-//     courtNumInput.value = parseInt(courtNumInput.value) - 1;
-// });
 
 
 
