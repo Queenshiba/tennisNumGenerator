@@ -5,8 +5,11 @@ let doublesPairNum = 2
 
 let doublesNumsArr = []
 
+let setNums = document.getElementById('setNums')
 
-
+setNums.addEventListener('click',
+    alert('hey')
+)
 
 
 function getNumsPlayers(doublesPlayerNum) {
