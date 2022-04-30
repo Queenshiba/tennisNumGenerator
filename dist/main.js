@@ -5,11 +5,11 @@ let doublesPairNum = 2
 
 let doublesNumsArr = []
 
+let playerValue = document.getElementById('playerInput').value
+
 let setNums = document.getElementById('setNums')
 
-setNums.addEventListener('click',
-    alert('hey')
-)
+setNums.addEventListener('click', console.log(playerValue))
 
 
 function getNumsPlayers(doublesPlayerNum) {
@@ -83,7 +83,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
         // let halfLengthWithOne = Math.round(doublesPlayerNum / 4)
         let amountsofgroup = Math.floor(doublesPlayerNum / 4)
         let remainder = doublesPlayerNum % doublesCourtNum
-            // console.log(amountsofgroup)
+        // console.log(amountsofgroup)
         for (let k = 0; k < amountsofgroup; k++) {
             firstHalfPair.push(secondRoundPairArray[k])
         }
