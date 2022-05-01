@@ -5,11 +5,16 @@ let doublesPairNum = 2
 
 let doublesNumsArr = []
 
-let playerValue = document.getElementById('playerInput').value
 
-let setNums = document.getElementById('setNums')
 
-setNums.addEventListener('click', console.log(playerValue))
+
+function setNums(n) {
+    let playerValue = document.getElementById('playerInput').value
+    let courtValue = document.getElementById('courtInput').value
+    console.log(playerValue)
+    console.log(courtValue)
+}
+
 
 
 function getNumsPlayers(doublesPlayerNum) {

@@ -19,10 +19,10 @@
         </div>
         <div class="number-input" id="court-wrap">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-            <input class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
+            <input id="courtInput" class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
-        <button id="setNums">SET</button>
+        <button onclick="setNums()">SET</button>
     </div>
 
 </body>
