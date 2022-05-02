@@ -1,5 +1,5 @@
-let doublesPlayerNum = 31
-let doublesCourtNum = 7
+let doublesPlayerNum = document.getElementById('playerInput').value
+let doublesCourtNum = document.getElementById('courtInput').value
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -8,13 +8,12 @@ let doublesNumsArr = []
 
 
 
-function setNums(n) {
-    let playerValue = document.getElementById('playerInput').value
+function setNums() {
+    playerValue = document.getElementById('playerInput').value
     let courtValue = document.getElementById('courtInput').value
     console.log(playerValue)
     console.log(courtValue)
 }
-
 
 
 function getNumsPlayers(doublesPlayerNum) {
@@ -25,7 +24,8 @@ function getNumsPlayers(doublesPlayerNum) {
     }
     return doublesPlayerNumArr;
 }
-getNumsPlayers(doublesPlayerNum)
+
+getNumsPlayers(setNums())
 
 function getNumsCourts(doublesCourtNum) {
     // get amounts of courts
@@ -103,7 +103,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             leftover.push(secondRoundPairArray[i])
 
         }
-        console.log(leftover)
+        // console.log(leftover)
     }
     return firstHalfPair
 }
