@@ -1,3 +1,4 @@
+
 let doublesPlayerNum = document.getElementById('playerInput').value
 let doublesCourtNum = document.getElementById('courtInput').value
 let doublesGroupNum = 4
@@ -108,3 +109,12 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     return firstHalfPair
 }
 console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+
+
+
+let resultWrap = document.getElementById('result-wrap')
+let divForResult = document.createElement('div');
+divForResult.setAttribute("id", "category");
+let testText = document.createTextNode('test')
+divForResult.appendChild(testText)
+resultWrap.appendChild(divForResult)
