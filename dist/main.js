@@ -7,6 +7,14 @@ let doublesPairNum = 2
 let doublesNumsArr = []
 
 
+function appendResult() {
+        let resultWrap = document.getElementById('result-wrap')
+    let divForResult = document.createElement('div');
+    divForResult.setAttribute("id", "category");
+    let testText = document.createTextNode('test')
+    divForResult.appendChild(testText)
+    resultWrap.appendChild(divForResult)
+}
 
 
 function setNums() {
@@ -14,6 +22,7 @@ function setNums() {
     let courtValue = document.getElementById('courtInput').value
     console.log(playerValue)
     console.log(courtValue)
+appendResult(playerValue)
 }
 
 
@@ -112,9 +121,3 @@ console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(
 
 
 
-let resultWrap = document.getElementById('result-wrap')
-let divForResult = document.createElement('div');
-divForResult.setAttribute("id", "category");
-let testText = document.createTextNode('test')
-divForResult.appendChild(testText)
-resultWrap.appendChild(divForResult)
