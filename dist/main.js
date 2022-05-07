@@ -1,21 +1,31 @@
 
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
 let doublesNumsArr = []
 
 let setBtn = document.getElementById('set-btn')
-setBtn.addEventListener('click', () => { appendResult()})
+setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
+    let doublesPlayerNum = document.getElementById('playerInput').value
+
     let resultWrap = document.getElementById('result-wrap')
+
     let divForResult = document.createElement('div');
-    divForResult.setAttribute("id", "category");
-    let testText = document.createTextNode('test')
-    divForResult.appendChild(testText)
+    divForResult.setAttribute("id", "resultDoublesPlayerNum");
+    let testTextdoublesPlayerNum = document.createTextNode(doublesPlayerNum)
+    divForResult.appendChild(testTextdoublesPlayerNum)
     resultWrap.appendChild(divForResult)
+
+    let doublesCourtNum = document.getElementById('courtInput').value
+    let divForResultdoublesCourtNum = document.createElement('div');
+    divForResultdoublesCourtNum.setAttribute("id", "resultdoublesCourtNum");
+    let testTextdoublesCourtNum = document.createTextNode(doublesCourtNum)
+    divForResultdoublesCourtNum.appendChild(testTextdoublesCourtNum)
+    resultWrap.appendChild(divForResultdoublesCourtNum)
 }
 
 
