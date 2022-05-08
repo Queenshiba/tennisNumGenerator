@@ -1,6 +1,6 @@
 
-// let doublesPlayerNum = document.getElementById('playerInput').value
-// let doublesCourtNum = document.getElementById('courtInput').value
+let doublesPlayerNum = document.getElementById('playerInput').value
+let doublesCourtNum = document.getElementById('courtInput').value
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -26,9 +26,10 @@ function appendResult() {
     let testTextdoublesCourtNum = document.createTextNode(doublesCourtNum)
     divForResultdoublesCourtNum.appendChild(testTextdoublesCourtNum)
     resultWrap.appendChild(divForResultdoublesCourtNum)
+
 }
 
-
+getNumsPlayers(doublesPlayerNum)
 
 
 function getNumsPlayers(doublesPlayerNum) {
@@ -40,7 +41,7 @@ function getNumsPlayers(doublesPlayerNum) {
     return doublesPlayerNumArr;
 }
 
-getNumsPlayers(setNums())
+
 
 function getNumsCourts(doublesCourtNum) {
     // get amounts of courts
@@ -62,7 +63,7 @@ function doublesFirstRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCo
     return gropsInArray
 
 }
-// console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
 
 
 
