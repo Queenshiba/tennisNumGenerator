@@ -1,6 +1,9 @@
 
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
+
+let doublesPlayerNum = 12
+let doublesCourtNum = 3
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -10,22 +13,25 @@ let setBtn = document.getElementById('set-btn')
 setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
-    let doublesPlayerNum = document.getElementById('playerInput').value
+    // let doublesPlayerNum = document.getElementById('playerInput').value
+    let doublesPlayerNum = 12
+    let doublesCourtNum = 3
+
 
     let resultWrap = document.getElementById('result-wrap')
 
-    let divForResult = document.createElement('div');
-    divForResult.setAttribute("id", "resultDoublesPlayerNum");
-    let testTextdoublesPlayerNum = document.createTextNode(doublesPlayerNum)
-    divForResult.appendChild(testTextdoublesPlayerNum)
-    resultWrap.appendChild(divForResult)
+    let divForResultFirst = document.createElement('div');
+    divForResultFirst.setAttribute("id", "divForResultFirst");
+    let testTextFirst = document.createTextNode(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+    divForResultFirst.appendChild(testTextFirst)
+    resultWrap.appendChild(divForResultFirst)
 
-    let doublesCourtNum = document.getElementById('courtInput').value
-    let divForResultdoublesCourtNum = document.createElement('div');
-    divForResultdoublesCourtNum.setAttribute("id", "resultdoublesCourtNum");
-    let testTextdoublesCourtNum = document.createTextNode(doublesCourtNum)
-    divForResultdoublesCourtNum.appendChild(testTextdoublesCourtNum)
-    resultWrap.appendChild(divForResultdoublesCourtNum)
+    let divForResultSecond = document.createElement('div');
+    divForResultSecond.setAttribute("id", "divForResultSecond");
+    let testTextSecond = document.createTextNode(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+    divForResultSecond.appendChild(testTextSecond)
+    resultWrap.appendChild(divForResultSecond)
+
 
 }
 
@@ -63,7 +69,7 @@ function doublesFirstRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCo
     return gropsInArray
 
 }
-console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
+// console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
 
 
 
@@ -79,7 +85,7 @@ function doublesSecondRoundGenerator(doublesPlayerNum) {
 
 }
 
-// console.log(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)),'test')
+
 
 function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, doublesCourtNum) {
 
