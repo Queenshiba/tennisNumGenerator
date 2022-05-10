@@ -14,7 +14,7 @@
     <div class="input-container">
         <div class="number-input" id="player-wrap">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-            <input id="playerInput" class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
+            <input id="playerInput" class="quantity bg-light" min="4" placeholder="0" name="quantity" value="4" type="number">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
         <div class="number-input" id="court-wrap">
@@ -23,6 +23,7 @@
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
         <button id="set-btn">SET</button>
+        <button id="reset-btn">RESET</button>
     </div>
 
     <div class="result-container">

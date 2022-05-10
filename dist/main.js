@@ -2,8 +2,8 @@
 // let doublesPlayerNum = document.getElementById('playerInput').value
 // let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = 12
-let doublesCourtNum = 3
+// let doublesPlayerNum = 12
+// let doublesCourtNum = 3
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -14,8 +14,8 @@ setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
     // let doublesPlayerNum = document.getElementById('playerInput').value
-    let doublesPlayerNum = 12
-    let doublesCourtNum = 3
+    let doublesPlayerNum = document.getElementById('playerInput').value
+    let doublesCourtNum = document.getElementById('courtInput').value
 
 
     let resultWrap = document.getElementById('result-wrap')
@@ -35,7 +35,7 @@ function appendResult() {
 
 }
 
-getNumsPlayers(doublesPlayerNum)
+// getNumsPlayers(doublesPlayerNum)
 
 
 function getNumsPlayers(doublesPlayerNum) {
@@ -129,7 +129,17 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     }
     return firstHalfPair
 }
-console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+// console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
 
 
 
+// reset btn
+
+let resetBtn = document.getElementById('reset-btn')
+resetBtn.addEventListener('click', () => { resetInputResult() })
+
+function resetInputResult() {
+    document.getElementById('playerInput').value = '4'
+    document.getElementById('courtInput').value = '1'
+
+}
