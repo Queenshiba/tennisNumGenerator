@@ -2,8 +2,8 @@
 // let doublesPlayerNum = document.getElementById('playerInput').value
 // let doublesCourtNum = document.getElementById('courtInput').value
 
-// let doublesPlayerNum = 12
-// let doublesCourtNum = 3
+let doublesPlayerNum = 40
+let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -22,22 +22,33 @@ function appendResult() {
 
     let divForResultFirst = document.createElement('div');
     divForResultFirst.setAttribute("id", "divForResultFirst");
-    let testTextFirst = document.createTextNode(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
-    divForResultFirst.appendChild(testTextFirst)
+    let testNodeFirst = document.createTextNode(firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum))))
+    let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
+    console.log(firstRoundGrops[0][0])
+
+    let divForCourtNo = document.createElement('div');
+    divForCourtNo.setAttribute("id", "divForCourtNo");
+
+
+
+    divForResultFirst.appendChild(testNodeFirst)
     resultWrap.appendChild(divForResultFirst)
+
+
+
 
     let divForResultSecond = document.createElement('div');
     divForResultSecond.setAttribute("id", "divForResultSecond");
-    let testTextSecond = document.createTextNode(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
-    divForResultSecond.appendChild(testTextSecond)
-    resultWrap.appendChild(divForResultSecond)
+    // let testTextSecond = document.createTextNode(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+    // divForResultSecond.appendChild(testTextSecond)
+    // resultWrap.appendChild(divForResultSecond)
 
 
 }
 
 // getNumsPlayers(doublesPlayerNum)
 
-
+// make an array of player numbers
 function getNumsPlayers(doublesPlayerNum) {
     // get numbers of players
     let doublesPlayerNumArr = [];
@@ -48,7 +59,7 @@ function getNumsPlayers(doublesPlayerNum) {
 }
 
 
-
+// make an array of court numbers
 function getNumsCourts(doublesCourtNum) {
     // get amounts of courts
     let doublesCourtNumArr = [];
@@ -58,32 +69,26 @@ function getNumsCourts(doublesCourtNum) {
     return doublesCourtNumArr;
 }
 
-// first round 
-function doublesFirstRoundGenerator(doublesPlayerNum, doublesGroupNum, doublesCourtNum) {
-    let gropsInArray
-    if (doublesPlayerNum % doublesCourtNum) {
-        gropsInArray = Array.from({ length: doublesCourtNum }, () => doublesPlayerNum.splice(0, doublesGroupNum));
-    } else {
-        gropsInArray = Array.from({ length: doublesCourtNum + 1 }, () => doublesPlayerNum.splice(0, doublesGroupNum));
-    }
-    return gropsInArray
-
-}
-// console.log(doublesFirstRoundGenerator(getNumsPlayers(doublesPlayerNum), doublesGroupNum, doublesCourtNum))
-
-
-
-function doublesSecondRoundGenerator(doublesPlayerNum) {
-    let secondRoundPairArray = []
-
+// making pair array
+function doublesPairGenerator(doublesPlayerNum) {
+    let doublespairArray = []
     for (let i = 0; i < doublesPlayerNum.length; i += 2) {
-        secondRoundPairArray.push(doublesPlayerNum.slice(i, i + 2))
-
+        doublespairArray.push(doublesPlayerNum.slice(i, i + 2))
     }
-    // console.log(secondRoundPairArray)
-    return secondRoundPairArray
-
+    return doublespairArray
 }
+
+
+// first round 
+function firstRoundGropMaker(doublespairArray) {
+    let groupArr = []
+    for (let i = 0; i < doublespairArray.length; i += 2) {
+        groupArr.push(doublespairArray.slice(i, i + 2))
+    }
+    return groupArr
+}
+console.log(firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum))))
+
 
 
 
@@ -129,7 +134,7 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
     }
     return firstHalfPair
 }
-// console.log(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+// console.log(SecondRoundNumRondomizer(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
 
 
 
