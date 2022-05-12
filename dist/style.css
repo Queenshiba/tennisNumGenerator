@@ -46,3 +46,20 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     padding:0;
 }
+
+
+#resultWrap {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+#resultFirstRoundWrap {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+.groupWrap {
+    display: flex;
+    flex-direction: row;
+}

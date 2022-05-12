@@ -1,9 +1,9 @@
 
-// let doublesPlayerNum = document.getElementById('playerInput').value
-// let doublesCourtNum = document.getElementById('courtInput').value
+let doublesPlayerNum = document.getElementById('playerInput').value
+let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = 40
-let doublesCourtNum = 10
+// let doublesPlayerNum = 40
+// let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -19,26 +19,62 @@ function appendResult() {
 
 
     let resultWrap = document.getElementById('result-wrap')
+    resultWrap.setAttribute("id", "resultWrap");
 
     let divForResultFirst = document.createElement('div');
-    divForResultFirst.setAttribute("id", "divForResultFirst");
-    let testNodeFirst = document.createTextNode(firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum))))
+    divForResultFirst.setAttribute("id", "resultFirstRoundWrap");
+
+    let divForGroupWrap = document.createElement('div');
+    divForGroupWrap.setAttribute("class", "groupWrap");
+
     let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
-    console.log(firstRoundGrops[0][0])
+    // console.log(firstRoundGrops[0])
+    // console.log(firstRoundGrops[1])
+    // console.log(firstRoundGrops)
+
+
+    for (let i = 0; i < firstRoundGrops.length; i++) {
+        let pairOne = firstRoundGrops[i][0];
+        let pairTwo = firstRoundGrops[i][1];
+        console.log(pairOne)
+        console.log(pairTwo)
+        let nodeFirstGroupCourtNo = document.createTextNode(i+1)
+        let nodeFirstGroupPairOne = document.createTextNode(pairOne)
+        let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
+        let nodeFirstGroupPairVs = document.createTextNode('vs.')
+
+        let pForPairOne = document.createElement('p');
+        pForPairOne.setAttribute("class", "pForPairOne");
+        let pForPairTwo = document.createElement('p');
+        pForPairTwo.setAttribute("class", "pForPairTwo");
+        let pForCourtNo = document.createElement('p');
+        pForCourtNo.setAttribute("class", "pForCourtNo");
+        let pForVs = document.createElement('p');
+        pForVs.setAttribute("class", "pForVs");
+        
+        pForPairOne.appendChild(nodeFirstGroupPairOne)
+        pForPairTwo.appendChild(nodeFirstGroupPairTwo)
+        pForCourtNo.appendChild(nodeFirstGroupCourtNo)
+        pForVs.appendChild(nodeFirstGroupPairVs)
+
+        divForGroupWrap.appendChild(pForCourtNo)
+        divForGroupWrap.appendChild(pForPairOne)
+        divForGroupWrap.appendChild(pForVs)
+        divForGroupWrap.appendChild(pForPairTwo)
+
+    }
+
 
     let divForCourtNo = document.createElement('div');
     divForCourtNo.setAttribute("id", "divForCourtNo");
 
 
-
-    divForResultFirst.appendChild(testNodeFirst)
+    divForResultFirst.appendChild(divForGroupWrap)
     resultWrap.appendChild(divForResultFirst)
 
 
-
-
-    let divForResultSecond = document.createElement('div');
-    divForResultSecond.setAttribute("id", "divForResultSecond");
+    // let divForResultSecond = document.createElement('div');
+    // divForResultSecond.setAttribute("id", "divForResultSecond");
     // let testTextSecond = document.createTextNode(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
     // divForResultSecond.appendChild(testTextSecond)
     // resultWrap.appendChild(divForResultSecond)
