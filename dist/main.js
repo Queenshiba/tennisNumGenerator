@@ -24,21 +24,23 @@ function appendResult() {
     let divForResultFirst = document.createElement('div');
     divForResultFirst.setAttribute("id", "resultFirstRoundWrap");
 
-    let divForGroupWrap = document.createElement('div');
-    divForGroupWrap.setAttribute("class", "groupWrap");
+
 
     let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
-    // console.log(firstRoundGrops[0])
-    // console.log(firstRoundGrops[1])
-    // console.log(firstRoundGrops)
+
+
+
 
 
     for (let i = 0; i < firstRoundGrops.length; i++) {
+        let divForGroupWrap = document.createElement('div');
+        divForGroupWrap.setAttribute("class", "groupWrap");
+
         let pairOne = firstRoundGrops[i][0];
         let pairTwo = firstRoundGrops[i][1];
         console.log(pairOne)
         console.log(pairTwo)
-        let nodeFirstGroupCourtNo = document.createTextNode(i+1)
+        let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
         let nodeFirstGroupPairOne = document.createTextNode(pairOne)
         let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
         let nodeFirstGroupPairVs = document.createTextNode('vs.')
@@ -51,7 +53,7 @@ function appendResult() {
         pForCourtNo.setAttribute("class", "pForCourtNo");
         let pForVs = document.createElement('p');
         pForVs.setAttribute("class", "pForVs");
-        
+
         pForPairOne.appendChild(nodeFirstGroupPairOne)
         pForPairTwo.appendChild(nodeFirstGroupPairTwo)
         pForCourtNo.appendChild(nodeFirstGroupCourtNo)
@@ -62,15 +64,15 @@ function appendResult() {
         divForGroupWrap.appendChild(pForVs)
         divForGroupWrap.appendChild(pForPairTwo)
 
+
+        divForResultFirst.appendChild(divForGroupWrap)
+        resultWrap.appendChild(divForResultFirst)
+
     }
 
 
-    let divForCourtNo = document.createElement('div');
-    divForCourtNo.setAttribute("id", "divForCourtNo");
 
 
-    divForResultFirst.appendChild(divForGroupWrap)
-    resultWrap.appendChild(divForResultFirst)
 
 
     // let divForResultSecond = document.createElement('div');
