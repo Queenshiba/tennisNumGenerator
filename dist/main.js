@@ -40,6 +40,7 @@ function appendResult() {
         let pairTwo = firstRoundGrops[i][1];
         console.log(pairOne)
         console.log(pairTwo)
+        // let nodeFirstGroupCourtText = document.createTextNode("Court")
         let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
         let nodeFirstGroupPairOne = document.createTextNode(pairOne)
         let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
@@ -56,6 +57,7 @@ function appendResult() {
 
         pForPairOne.appendChild(nodeFirstGroupPairOne)
         pForPairTwo.appendChild(nodeFirstGroupPairTwo)
+        // pForCourtNo.appendChild(nodeFirstGroupCourtText)
         pForCourtNo.appendChild(nodeFirstGroupCourtNo)
         pForVs.appendChild(nodeFirstGroupPairVs)
 

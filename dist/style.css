@@ -49,18 +49,42 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 #resultWrap {
-    background-color: blue;
+    /* background-color: #ccff00; */
     display: flex;
     flex-direction: column;
     height: 90vh;
 }
 #resultFirstRoundWrap {
-    background-color: aqua;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .groupWrap {
     display: flex;
+    margin: 1% 0;
+    padding: 0 1%;
+    border-radius: 4%;
     flex-direction: row;
-    background-color: yellow;
+    justify-content: space-between;
+    width: 40%;
+    background-color: white;
+    box-shadow: 5px 5px 19px 2px #DBDBDB;
+    font-size: 1.5em;
+
+}
+.pForCourtNo {
+    color: black;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background: #ccff00;
+}
+.pForPairOne, .pForPairTwo {
+    line-height: 40px;
+}
+.pForVs {
+    line-height: 40px;
 }
