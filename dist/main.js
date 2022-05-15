@@ -1,9 +1,8 @@
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
-
-// let doublesPlayerNum = 40
-// let doublesCourtNum = 10
+let doublesPlayerNum = 40
+let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -24,28 +23,29 @@ function appendResult() {
     let divForResultFirst = document.createElement('div');
     divForResultFirst.setAttribute("id", "resultFirstRoundWrap");
 
-
-
     let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
 
+    // appending title "first round"
+    let h2ForFirstRoundTitleText = document.createElement('p');
+    let nodeFirstRoundTitleText = document.createTextNode("First Round")
+    h2ForFirstRoundTitleText.appendChild(nodeFirstRoundTitleText)
+    resultWrap.appendChild(h2ForFirstRoundTitleText)
 
-
-
-
+    // appending numbers of firstround
     for (let i = 0; i < firstRoundGrops.length; i++) {
         let divForGroupWrap = document.createElement('div');
         divForGroupWrap.setAttribute("class", "groupWrap");
 
         let pairOne = firstRoundGrops[i][0];
         let pairTwo = firstRoundGrops[i][1];
-        console.log(pairOne)
-        console.log(pairTwo)
-        // let nodeFirstGroupCourtText = document.createTextNode("Court")
+
         let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
         let nodeFirstGroupPairOne = document.createTextNode(pairOne)
         let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
         let nodeFirstGroupPairVs = document.createTextNode('vs.')
 
+
+        h2ForFirstRoundTitleText.setAttribute("id", "firstRoundTitleText");
         let pForPairOne = document.createElement('p');
         pForPairOne.setAttribute("class", "pForPairOne");
         let pForPairTwo = document.createElement('p');
@@ -55,9 +55,9 @@ function appendResult() {
         let pForVs = document.createElement('p');
         pForVs.setAttribute("class", "pForVs");
 
+
         pForPairOne.appendChild(nodeFirstGroupPairOne)
         pForPairTwo.appendChild(nodeFirstGroupPairTwo)
-        // pForCourtNo.appendChild(nodeFirstGroupCourtText)
         pForCourtNo.appendChild(nodeFirstGroupCourtNo)
         pForVs.appendChild(nodeFirstGroupPairVs)
 
@@ -68,7 +68,9 @@ function appendResult() {
 
 
         divForResultFirst.appendChild(divForGroupWrap)
+
         resultWrap.appendChild(divForResultFirst)
+
 
     }
 
@@ -76,17 +78,15 @@ function appendResult() {
 
 
 
-
     // let divForResultSecond = document.createElement('div');
     // divForResultSecond.setAttribute("id", "divForResultSecond");
-    // let testTextSecond = document.createTextNode(SecondRoundNumRondomizer(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+    // let testTextSecond = document.createTextNode(SecondRoundGrouping(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
     // divForResultSecond.appendChild(testTextSecond)
     // resultWrap.appendChild(divForResultSecond)
 
 
 }
 
-// getNumsPlayers(doublesPlayerNum)
 
 // make an array of player numbers
 function getNumsPlayers(doublesPlayerNum) {
@@ -127,12 +127,10 @@ function firstRoundGropMaker(doublespairArray) {
     }
     return groupArr
 }
-console.log(firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum))))
+// console.log(firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum))))
 
 
-
-
-function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, doublesCourtNum) {
+function SecondRoundGrouping(secondRoundPairArray, doublesPlayerNum, doublesCourtNum) {
 
     let firstHalfPair = []
     let lastHalfPair = []
@@ -152,10 +150,9 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             firstHalfPair[z].push(lastHalfPair[z][1])
         }
     } else {
-        // let halfLengthWithOne = Math.round(doublesPlayerNum / 4)
+
         let amountsofgroup = Math.floor(doublesPlayerNum / 4)
         let remainder = doublesPlayerNum % doublesCourtNum
-        // console.log(amountsofgroup)
         for (let k = 0; k < amountsofgroup; k++) {
             firstHalfPair.push(secondRoundPairArray[k])
         }
@@ -170,12 +167,23 @@ function SecondRoundNumRondomizer(secondRoundPairArray, doublesPlayerNum, double
             leftover.push(secondRoundPairArray[i])
 
         }
-        // console.log(leftover)
     }
     return firstHalfPair
 }
-// console.log(SecondRoundNumRondomizer(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+// console.log(SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum)
+console.log(secondRoundGroupingArr)
 
+function secondRoundGroupShuffled(secondRoundGroupingArr) {
+    console.log(secondRoundGroupingArr[0])
+    let test = secondRoundGroupingArr[0]
+    test.splice(1, 0, secondRoundGroupingArr[0][2])
+    test.splice(3, 0, secondRoundGroupingArr[0][4])
+    console.log(test)
+    let a = test.slice(0, 4)
+    console.log(a)
+}
+secondRoundGroupShuffled(secondRoundGroupingArr)
 
 
 // reset btn
