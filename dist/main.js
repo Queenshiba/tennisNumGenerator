@@ -175,13 +175,18 @@ let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPla
 console.log(secondRoundGroupingArr)
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
-    console.log(secondRoundGroupingArr[0])
-    let test = secondRoundGroupingArr[0]
-    test.splice(1, 0, secondRoundGroupingArr[0][2])
-    test.splice(3, 0, secondRoundGroupingArr[0][4])
-    console.log(test)
-    let a = test.slice(0, 4)
-    console.log(a)
+    // console.log(secondRoundGroupingArr[0])
+    for (let i = 0; i < secondRoundGroupingArr.length; i++) {
+
+        let group = secondRoundGroupingArr[i]
+        group.splice(1, 0, secondRoundGroupingArr[i][2])
+        group.splice(3, 0, secondRoundGroupingArr[i][4])
+        let shuffledGroup = group.slice(0, 4)
+        // return shuffledGroup
+console.log(shuffledGroup)
+    }
+    
+
 }
 secondRoundGroupShuffled(secondRoundGroupingArr)
 
