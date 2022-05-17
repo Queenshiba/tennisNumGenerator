@@ -70,23 +70,53 @@ function appendResult() {
         divForResultFirst.appendChild(divForGroupWrap)
 
         resultWrap.appendChild(divForResultFirst)
+}
+
+let secondRoundGroupShuffled = secondRoundGroupShuffled(secondRoundGroupingArr)
+
+for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
+    let divForGroupWrap = document.createElement('div');
+    divForGroupWrap.setAttribute("class", "groupWrap");
+
+    let pairOne = secondRoundGroupShuffled[i][0];
+    let pairTwo = secondRoundGroupShuffled[i][1];
+
+    let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
+    let nodeFirstGroupPairOne = document.createTextNode(pairOne)
+    let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
+    let nodeFirstGroupPairVs = document.createTextNode('vs.')
+
+
+    h2ForFirstRoundTitleText.setAttribute("id", "firstRoundTitleText");
+    let pForPairOne = document.createElement('p');
+    pForPairOne.setAttribute("class", "pForPairOne");
+    let pForPairTwo = document.createElement('p');
+    pForPairTwo.setAttribute("class", "pForPairTwo");
+    let pForCourtNo = document.createElement('p');
+    pForCourtNo.setAttribute("class", "pForCourtNo");
+    let pForVs = document.createElement('p');
+    pForVs.setAttribute("class", "pForVs");
+
+
+    pForPairOne.appendChild(nodeFirstGroupPairOne)
+    pForPairTwo.appendChild(nodeFirstGroupPairTwo)
+    pForCourtNo.appendChild(nodeFirstGroupCourtNo)
+    pForVs.appendChild(nodeFirstGroupPairVs)
+
+    divForGroupWrap.appendChild(pForCourtNo)
+    divForGroupWrap.appendChild(pForPairOne)
+    divForGroupWrap.appendChild(pForVs)
+    divForGroupWrap.appendChild(pForPairTwo)
+
+
+    divForResultFirst.appendChild(divForGroupWrap)
+
+    resultWrap.appendChild(divForResultFirst)
+}
+
 
 
     }
-
-
-
-
-
-    // let divForResultSecond = document.createElement('div');
-    // divForResultSecond.setAttribute("id", "divForResultSecond");
-    // let testTextSecond = document.createTextNode(SecondRoundGrouping(doublesSecondRoundGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
-    // divForResultSecond.appendChild(testTextSecond)
-    // resultWrap.appendChild(divForResultSecond)
-
-
-}
-
 
 // make an array of player numbers
 function getNumsPlayers(doublesPlayerNum) {
