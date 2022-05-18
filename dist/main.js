@@ -20,12 +20,14 @@ function appendResult() {
     let resultWrap = document.getElementById('result-wrap')
     resultWrap.setAttribute("id", "resultWrap");
 
-    let divForResultFirst = document.createElement('div');
-    divForResultFirst.setAttribute("id", "resultFirstRoundWrap");
+
 
     let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
 
     // appending title "first round"
+    let divForResultFirst = document.createElement('div');
+    divForResultFirst.setAttribute("id", "resultFirstRoundWrap");
+
     let h2ForFirstRoundTitleText = document.createElement('p');
     let nodeFirstRoundTitleText = document.createTextNode("First Round")
     h2ForFirstRoundTitleText.appendChild(nodeFirstRoundTitleText)
@@ -72,6 +74,19 @@ function appendResult() {
         resultWrap.appendChild(divForResultFirst)
 }
 
+
+// second round
+    // appending title "second round"
+    let divForResultSecond = document.createElement('div');
+    divForResultSecond.setAttribute("id", "resultSecondRoundWrap");
+
+    let h2ForSecondRoundTitleText = document.createElement('p');
+    let nodeSecondRoundTitleText = document.createTextNode("Second Round")
+    h2ForSecondRoundTitleText.appendChild(nodeSecondRoundTitleText)
+    resultWrap.appendChild(h2ForSecondRoundTitleText)
+
+
+    // appending numbers of secondround
 let secondRoundGroupShuffled = secondRoundGroupShuffled(secondRoundGroupingArr)
 
 for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
@@ -81,13 +96,13 @@ for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
     let pairOne = secondRoundGroupShuffled[i][0];
     let pairTwo = secondRoundGroupShuffled[i][1];
 
-    let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
-    let nodeFirstGroupPairOne = document.createTextNode(pairOne)
-    let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
-    let nodeFirstGroupPairVs = document.createTextNode('vs.')
+    let nodeSecondGroupCourtNo = document.createTextNode(i + 1)
+    let nodeSecondGroupPairOne = document.createTextNode(pairOne)
+    let nodeSecondGroupPairTwo = document.createTextNode(pairTwo)
+    let nodeSecondGroupPairVs = document.createTextNode('vs.')
+ 
 
-
-    h2ForFirstRoundTitleText.setAttribute("id", "firstRoundTitleText");
+    h2ForSecondRoundTitleText.setAttribute("id", "secondRoundTitleText");
     let pForPairOne = document.createElement('p');
     pForPairOne.setAttribute("class", "pForPairOne");
     let pForPairTwo = document.createElement('p');
@@ -98,10 +113,10 @@ for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
     pForVs.setAttribute("class", "pForVs");
 
 
-    pForPairOne.appendChild(nodeFirstGroupPairOne)
-    pForPairTwo.appendChild(nodeFirstGroupPairTwo)
-    pForCourtNo.appendChild(nodeFirstGroupCourtNo)
-    pForVs.appendChild(nodeFirstGroupPairVs)
+    pForPairOne.appendChild(nodeSecondGroupPairOne)
+    pForPairTwo.appendChild(nodeSecondGroupPairTwo)
+    pForCourtNo.appendChild(nodeSecondGroupCourtNo)
+    pForVs.appendChild(nodeSecondGroupPairVs)
 
     divForGroupWrap.appendChild(pForCourtNo)
     divForGroupWrap.appendChild(pForPairOne)
@@ -109,9 +124,9 @@ for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
     divForGroupWrap.appendChild(pForPairTwo)
 
 
-    divForResultFirst.appendChild(divForGroupWrap)
+    divForResultSecond.appendChild(divForGroupWrap)
 
-    resultWrap.appendChild(divForResultFirst)
+    resultWrap.appendChild(divForResultSecond)
 }
 
 
@@ -202,7 +217,7 @@ function SecondRoundGrouping(secondRoundPairArray, doublesPlayerNum, doublesCour
 }
 // console.log(SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
 let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum)
-console.log(secondRoundGroupingArr)
+// console.log(secondRoundGroupingArr)
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
     // console.log(secondRoundGroupingArr[0])
@@ -213,7 +228,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         group.splice(3, 0, secondRoundGroupingArr[i][4])
         let shuffledGroup = group.slice(0, 4)
         // return shuffledGroup
-console.log(shuffledGroup)
+// console.log(shuffledGroup)
     }
     
 
