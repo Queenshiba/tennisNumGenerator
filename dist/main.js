@@ -1,8 +1,8 @@
-// let doublesPlayerNum = document.getElementById('playerInput').value
-// let doublesCourtNum = document.getElementById('courtInput').value
+let doublesPlayerNum = document.getElementById('playerInput').value
+let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = 40
-let doublesCourtNum = 10
+// let doublesPlayerNum = 40
+// let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -12,7 +12,6 @@ let setBtn = document.getElementById('set-btn')
 setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
-    // let doublesPlayerNum = document.getElementById('playerInput').value
     let doublesPlayerNum = document.getElementById('playerInput').value
     let doublesCourtNum = document.getElementById('courtInput').value
 
@@ -76,6 +75,10 @@ function appendResult() {
 
 
 // second round
+let secondRoundGroupShuffled = secondRoundGroupShuffled(SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+
+
+// console.log(secondRoundGroupShuffled)
     // appending title "second round"
     let divForResultSecond = document.createElement('div');
     divForResultSecond.setAttribute("id", "resultSecondRoundWrap");
@@ -87,7 +90,7 @@ function appendResult() {
 
 
     // appending numbers of secondround
-let secondRoundGroupShuffled = secondRoundGroupShuffled(secondRoundGroupingArr)
+
 
 for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
     let divForGroupWrap = document.createElement('div');
@@ -228,7 +231,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         group.splice(3, 0, secondRoundGroupingArr[i][4])
         let shuffledGroup = group.slice(0, 4)
         // return shuffledGroup
-// console.log(shuffledGroup)
+console.log(shuffledGroup)
     }
     
 
