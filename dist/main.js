@@ -1,8 +1,8 @@
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
 
-// let doublesPlayerNum = 40
-// let doublesCourtNum = 10
+let doublesPlayerNum = 40
+let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -12,8 +12,8 @@ let setBtn = document.getElementById('set-btn')
 setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
-    let doublesPlayerNum = document.getElementById('playerInput').value
-    let doublesCourtNum = document.getElementById('courtInput').value
+    // let doublesPlayerNum = document.getElementById('playerInput').value
+    // let doublesCourtNum = document.getElementById('courtInput').value
 
 
     let resultWrap = document.getElementById('result-wrap')
@@ -21,7 +21,7 @@ function appendResult() {
 
 
 
-    let firstRoundGrops = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
+    let firstRoundGroups = firstRoundGropMaker(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)))
 
     // appending title "first round"
     let divForResultFirst = document.createElement('div');
@@ -33,12 +33,12 @@ function appendResult() {
     resultWrap.appendChild(h2ForFirstRoundTitleText)
 
     // appending numbers of firstround
-    for (let i = 0; i < firstRoundGrops.length; i++) {
+    for (let i = 0; i < firstRoundGroups.length; i++) {
         let divForGroupWrap = document.createElement('div');
         divForGroupWrap.setAttribute("class", "groupWrap");
 
-        let pairOne = firstRoundGrops[i][0];
-        let pairTwo = firstRoundGrops[i][1];
+        let pairOne = firstRoundGroups[i][0];
+        let pairTwo = firstRoundGroups[i][1];
 
         let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
         let nodeFirstGroupPairOne = document.createTextNode(pairOne)
@@ -75,10 +75,10 @@ function appendResult() {
 
 
 // second round
-let secondRoundGroupShuffled = secondRoundGroupShuffled(SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
+let secondRoundGroupShuffledGroup = secondRoundGroupShuffled(secondRoundGroupingArr)
 
 
-// console.log(secondRoundGroupShuffled)
+console.log(secondRoundGroupShuffledGroup)
     // appending title "second round"
     let divForResultSecond = document.createElement('div');
     divForResultSecond.setAttribute("id", "resultSecondRoundWrap");
@@ -92,12 +92,12 @@ let secondRoundGroupShuffled = secondRoundGroupShuffled(SecondRoundGrouping(doub
     // appending numbers of secondround
 
 
-for (let i = 0; i < secondRoundGroupShuffled.length; i++) {
+for (let i = 0; i < secondRoundGroupShuffledGroup.length; i++) {
     let divForGroupWrap = document.createElement('div');
     divForGroupWrap.setAttribute("class", "groupWrap");
 
-    let pairOne = secondRoundGroupShuffled[i][0];
-    let pairTwo = secondRoundGroupShuffled[i][1];
+    let pairOne = secondRoundGroupShuffledGroup[i][0];
+    let pairTwo = secondRoundGroupShuffledGroup[i][1];
 
     let nodeSecondGroupCourtNo = document.createTextNode(i + 1)
     let nodeSecondGroupPairOne = document.createTextNode(pairOne)
@@ -224,19 +224,21 @@ let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPla
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
     // console.log(secondRoundGroupingArr[0])
+    
+    let shuffledGroupArr = []
     for (let i = 0; i < secondRoundGroupingArr.length; i++) {
 
         let group = secondRoundGroupingArr[i]
         group.splice(1, 0, secondRoundGroupingArr[i][2])
         group.splice(3, 0, secondRoundGroupingArr[i][4])
         let shuffledGroup = group.slice(0, 4)
-        // return shuffledGroup
-console.log(shuffledGroup)
+        shuffledGroupArr.push(shuffledGroup)
     }
-    
+    return shuffledGroupArr
+// console.log(shuffledGroup)
 
 }
-secondRoundGroupShuffled(secondRoundGroupingArr)
+// console.log(secondRoundGroupShuffled(secondRoundGroupingArr))
 
 
 // reset btn
