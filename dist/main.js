@@ -40,6 +40,8 @@ function appendResult() {
         let pairOne = firstRoundGroups[i][0];
         let pairTwo = firstRoundGroups[i][1];
 
+        console.log(pairOne)
+
         let nodeFirstGroupCourtNo = document.createTextNode(i + 1)
         let nodeFirstGroupPairOne = document.createTextNode(pairOne)
         let nodeFirstGroupPairTwo = document.createTextNode(pairTwo)
@@ -71,14 +73,14 @@ function appendResult() {
         divForResultFirst.appendChild(divForGroupWrap)
 
         resultWrap.appendChild(divForResultFirst)
-}
+    }
 
 
-// second round
-let secondRoundGroupShuffledGroup = secondRoundGroupShuffled(secondRoundGroupingArr)
+    // second round
+    let secondRoundGroupShuffledGroup = secondRoundGroupShuffled(secondRoundGroupingArr)
 
 
-console.log(secondRoundGroupShuffledGroup)
+    console.log(secondRoundGroupShuffledGroup)
     // appending title "second round"
     let divForResultSecond = document.createElement('div');
     divForResultSecond.setAttribute("id", "resultSecondRoundWrap");
@@ -91,50 +93,61 @@ console.log(secondRoundGroupShuffledGroup)
 
     // appending numbers of secondround
 
+    for (let i = 0; i < secondRoundGroupShuffledGroup.length; i++) {
+        let divForGroupWrap = document.createElement('div');
+        divForGroupWrap.setAttribute("class", "groupWrap");
 
-for (let i = 0; i < secondRoundGroupShuffledGroup.length; i++) {
-    let divForGroupWrap = document.createElement('div');
-    divForGroupWrap.setAttribute("class", "groupWrap");
-
-    let pairOne = secondRoundGroupShuffledGroup[i][0];
-    let pairTwo = secondRoundGroupShuffledGroup[i][1];
-
-    let nodeSecondGroupCourtNo = document.createTextNode(i + 1)
-    let nodeSecondGroupPairOne = document.createTextNode(pairOne)
-    let nodeSecondGroupPairTwo = document.createTextNode(pairTwo)
-    let nodeSecondGroupPairVs = document.createTextNode('vs.')
- 
-
-    h2ForSecondRoundTitleText.setAttribute("id", "secondRoundTitleText");
-    let pForPairOne = document.createElement('p');
-    pForPairOne.setAttribute("class", "pForPairOne");
-    let pForPairTwo = document.createElement('p');
-    pForPairTwo.setAttribute("class", "pForPairTwo");
-    let pForCourtNo = document.createElement('p');
-    pForCourtNo.setAttribute("class", "pForCourtNo");
-    let pForVs = document.createElement('p');
-    pForVs.setAttribute("class", "pForVs");
+        let playerOne = secondRoundGroupShuffledGroup[i][0];
+        let playerTwo = secondRoundGroupShuffledGroup[i][1];
+        let playerThree = secondRoundGroupShuffledGroup[i][0];
+        let playerFour = secondRoundGroupShuffledGroup[i][1];
 
 
-    pForPairOne.appendChild(nodeSecondGroupPairOne)
-    pForPairTwo.appendChild(nodeSecondGroupPairTwo)
-    pForCourtNo.appendChild(nodeSecondGroupCourtNo)
-    pForVs.appendChild(nodeSecondGroupPairVs)
-
-    divForGroupWrap.appendChild(pForCourtNo)
-    divForGroupWrap.appendChild(pForPairOne)
-    divForGroupWrap.appendChild(pForVs)
-    divForGroupWrap.appendChild(pForPairTwo)
+        let nodeSecondGroupCourtNo = document.createTextNode(i + 1)
+        let nodeSecondGroupPlayerOne = document.createTextNode(playerOne)
+        let nodeSecondGroupPlayerTwo = document.createTextNode(playerTwo)
+        let nodeSecondGroupPlayerThree = document.createTextNode(playerThree)
+        let nodeSecondGroupPlayerFour = document.createTextNode(playerFour)
+        let nodeSecondGroupPairVs = document.createTextNode('vs.')
 
 
-    divForResultSecond.appendChild(divForGroupWrap)
+        h2ForSecondRoundTitleText.setAttribute("id", "secondRoundTitleText");
+        let pForPlayerOne = document.createElement('p');
+        pForPlayerOne.setAttribute("class", "pForPlayerOne");
+        let pForPlayerTwo = document.createElement('p');
+        pForPlayerTwo.setAttribute("class", "pForPlayerTwo");
+        let pForPlayerThree = document.createElement('p');
+        pForPlayerThree.setAttribute("class", "pForPlayerThree");
+        let pForPlayerFour = document.createElement('p');
+        pForPlayerFour.setAttribute("class", "pForPlayerFour");
+        let pForCourtNo = document.createElement('p');
+        pForCourtNo.setAttribute("class", "pForCourtNo");
+        let pForVs = document.createElement('p');
+        pForVs.setAttribute("class", "pForVs");
 
-    resultWrap.appendChild(divForResultSecond)
-}
 
+        pForPlayerOne.appendChild(nodeSecondGroupPlayerOne)
+        pForPlayerTwo.appendChild(nodeSecondGroupPlayerTwo)
+        pForCourtNo.appendChild(nodeSecondGroupCourtNo)
+        pForPlayerThree.appendChild(nodeSecondGroupPlayerThree)
+        pForPlayerFour.appendChild(nodeSecondGroupPlayerFour)
+        pForVs.appendChild(nodeSecondGroupPairVs)
 
+        divForGroupWrap.appendChild(pForCourtNo)
+        divForGroupWrap.appendChild(pForPlayerOne)
+        divForGroupWrap.appendChild(pForPlayerTwo)
+        divForGroupWrap.appendChild(pForVs)
+        divForGroupWrap.appendChild(pForPlayerThree)
+        divForGroupWrap.appendChild(pForPlayerFour)
 
+        divForResultSecond.appendChild(divForGroupWrap)
+
+        resultWrap.appendChild(divForResultSecond)
     }
+
+
+
+}
 
 // make an array of player numbers
 function getNumsPlayers(doublesPlayerNum) {
@@ -224,7 +237,7 @@ let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPla
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
     // console.log(secondRoundGroupingArr[0])
-    
+
     let shuffledGroupArr = []
     for (let i = 0; i < secondRoundGroupingArr.length; i++) {
 
@@ -235,7 +248,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         shuffledGroupArr.push(shuffledGroup)
     }
     return shuffledGroupArr
-// console.log(shuffledGroup)
+    // console.log(shuffledGroup)
 
 }
 // console.log(secondRoundGroupShuffled(secondRoundGroupingArr))
