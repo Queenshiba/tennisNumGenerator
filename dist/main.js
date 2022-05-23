@@ -1,8 +1,8 @@
 // let doublesPlayerNum = document.getElementById('playerInput').value
 // let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = 40
-let doublesCourtNum = 10
+let doublesPlayerNum = 12
+let doublesCourtNum = 3
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -81,7 +81,7 @@ function appendResult() {
 
 
     console.log(secondRoundGroupShuffledGroup)
-    // appending title "second round"
+        // appending title "second round"
     let divForResultSecond = document.createElement('div');
     divForResultSecond.setAttribute("id", "resultSecondRoundWrap");
 
@@ -99,8 +99,8 @@ function appendResult() {
 
         let playerOne = secondRoundGroupShuffledGroup[i][0];
         let playerTwo = secondRoundGroupShuffledGroup[i][1];
-        let playerThree = secondRoundGroupShuffledGroup[i][0];
-        let playerFour = secondRoundGroupShuffledGroup[i][1];
+        let playerThree = secondRoundGroupShuffledGroup[i][2];
+        let playerFour = secondRoundGroupShuffledGroup[i][3];
 
 
         let nodeSecondGroupCourtNo = document.createTextNode(i + 1)
@@ -233,7 +233,7 @@ function SecondRoundGrouping(secondRoundPairArray, doublesPlayerNum, doublesCour
 }
 // console.log(SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum))
 let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)), doublesPlayerNum, doublesCourtNum)
-// console.log(secondRoundGroupingArr)
+    // console.log(secondRoundGroupingArr)
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
     // console.log(secondRoundGroupingArr[0])
@@ -248,7 +248,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         shuffledGroupArr.push(shuffledGroup)
     }
     return shuffledGroupArr
-    // console.log(shuffledGroup)
+        // console.log(shuffledGroup)
 
 }
 // console.log(secondRoundGroupShuffled(secondRoundGroupingArr))
