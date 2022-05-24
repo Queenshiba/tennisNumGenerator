@@ -96,3 +96,9 @@ input[type=number]::-webkit-outer-spin-button {
 .pForVs {
     line-height: 30px;
 }
+#resultSecondRoundWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

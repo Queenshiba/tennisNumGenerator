@@ -1,8 +1,8 @@
-// let doublesPlayerNum = document.getElementById('playerInput').value
-// let doublesCourtNum = document.getElementById('courtInput').value
+let doublesPlayerNum = document.getElementById('playerInput').value
+let doublesCourtNum = document.getElementById('courtInput').value
 
-let doublesPlayerNum = 12
-let doublesCourtNum = 3
+// let doublesPlayerNum = 12
+// let doublesCourtNum = 3
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
