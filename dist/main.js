@@ -12,8 +12,8 @@ let setBtn = document.getElementById('set-btn')
 setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
-    // let doublesPlayerNum = document.getElementById('playerInput').value
-    // let doublesCourtNum = document.getElementById('courtInput').value
+    let doublesPlayerNum = document.getElementById('playerInput').value
+    let doublesCourtNum = document.getElementById('courtInput').value
 
 
     let resultWrap = document.getElementById('result-wrap')
@@ -260,7 +260,8 @@ let resetBtn = document.getElementById('reset-btn')
 resetBtn.addEventListener('click', () => { resetInputResult() })
 
 function resetInputResult() {
-    document.getElementById('playerInput').value = '4'
-    document.getElementById('courtInput').value = '1'
+    document.getElementById('playerInput').value.reset()
+    document.getElementById('courtInput').value.reset()
 
 }
+// document.getElementById('playerInput').value.reset();
