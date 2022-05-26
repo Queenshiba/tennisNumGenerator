@@ -25,7 +25,6 @@ input[type=number]::-webkit-outer-spin-button {
     border: 2px solid #ddd;
     display: inline-flex;
     width: auto;
-    background-color: aqua;
 }
 
 .number-input,

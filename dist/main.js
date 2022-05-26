@@ -251,7 +251,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         // console.log(shuffledGroup)
 
 }
-// console.log(secondRoundGroupShuffled(secondRoundGroupingArr))
+// secondRoundGroupShuffled(secondRoundGroupingArr)
 
 
 // reset btn
@@ -260,8 +260,8 @@ let resetBtn = document.getElementById('reset-btn')
 resetBtn.addEventListener('click', () => { resetInputResult() })
 
 function resetInputResult() {
-    document.getElementById('playerInput').value.reset()
-    document.getElementById('courtInput').value.reset()
-
+    document.getElementById('playerInput').value
+    document.getElementById('courtInput').value
+alert('test')
 }
 // document.getElementById('playerInput').value.reset();
