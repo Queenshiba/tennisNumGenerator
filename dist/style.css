@@ -44,6 +44,12 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
     position: relative;
     padding: 0;
+    height: 20px;
+    
+}
+.btn {
+    line-height: 20px;
+    
 }
 
 #resultWrap {
@@ -100,4 +106,7 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.tennisBall {
+    height: 20px;
 }
