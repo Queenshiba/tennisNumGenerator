@@ -1,8 +1,8 @@
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
 
-// let doublesPlayerNum = 12
-// let doublesCourtNum = 3
+// let doublesPlayerNum = 40
+// let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -262,6 +262,6 @@ resetBtn.addEventListener('click', () => { resetInputResult() })
 function resetInputResult() {
     document.getElementById('playerInput').value
     document.getElementById('courtInput').value
-alert('test')
+    alert('test')
 }
 // document.getElementById('playerInput').value.reset();

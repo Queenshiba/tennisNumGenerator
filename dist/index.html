@@ -22,15 +22,19 @@
             <input id="courtInput" class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1" type="number">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
-        <button  class="btn" id="set-btn"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">SET<img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
-        <button class="btn" id="reset-btn" type="reset"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">RESET<img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
+        <button class="btn" id="set-btn"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">
+            <p>SET</p>
+            <img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
+        <button class="btn" id="reset-btn" type="reset"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">
+            <p>RESET</p>
+            <img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
     </div>
 
     <div class="result-container">
         <div class="result-title-wrap">
             <h2>Result</h2>
         </div>
-        <div id="result-wrap"></div> 
+        <div id="result-wrap"></div>
     </div>
 </body>
 <script src="./main.js"></script>
