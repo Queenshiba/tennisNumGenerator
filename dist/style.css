@@ -3,6 +3,13 @@
     margin: none;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 .input-container {
     display: flex;
     flex-direction: column;
@@ -53,9 +60,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #resultWrap {
-    /* background-color: #ccff00; */
+    background-color: #ccff00;
     display: flex;
     flex-direction: column;
+    min-width: 300px;
 }
 
 #resultFirstRoundWrap {
@@ -71,17 +79,17 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 4%;
     flex-direction: row;
     justify-content: space-around;
-    width: 40%;
+    /* width: 90%; */
     background-color: white;
     box-shadow: 5px 5px 19px 2px #DBDBDB;
     font-size: 1.5em;
 }
 
-@media screen and (max-width:480px) {
+/* @media screen and (max-width:480px) {
     .groupWrap {
         width: 90%;
     }
-}
+} */
 
 .pForCourtNo {
     color: black;
