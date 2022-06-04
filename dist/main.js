@@ -1,8 +1,8 @@
-let doublesPlayerNum = document.getElementById('playerInput').value
-let doublesCourtNum = document.getElementById('courtInput').value
+// let doublesPlayerNum = document.getElementById('playerInput').value
+// let doublesCourtNum = document.getElementById('courtInput').value
 
-// let doublesPlayerNum = 12
-// let doublesCourtNum = 3
+let doublesPlayerNum = 40
+let doublesCourtNum = 10
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
@@ -12,8 +12,8 @@ let setBtn = document.getElementById('set-btn')
 setBtn.addEventListener('click', () => { appendResult() })
 
 function appendResult() {
-    let doublesPlayerNum = document.getElementById('playerInput').value
-    let doublesCourtNum = document.getElementById('courtInput').value
+    // let doublesPlayerNum = document.getElementById('playerInput').value
+    // let doublesCourtNum = document.getElementById('courtInput').value
 
 
     let resultWrap = document.getElementById('result-wrap')
