@@ -55,11 +55,15 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     padding: 0;
     height: 20px;
-    
 }
+
 .btn {
-    line-height: 20px;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccff00;
+    width: 100px;
 }
 
 #resultWrap {
@@ -114,12 +118,15 @@ input[type=number]::-webkit-outer-spin-button {
 .pForVs {
     line-height: 30px;
 }
+
 #resultSecondRoundWrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .tennisBall {
     height: 20px;
+    margin: 0 3%;
 }
