@@ -1,13 +1,8 @@
 // let doublesPlayerNum = document.getElementById('playerInput').value
 // let doublesCourtNum = document.getElementById('courtInput').value
 
-<<<<<<< HEAD
 let doublesPlayerNum = 40
 let doublesCourtNum = 10
-=======
-// let doublesPlayerNum = 40
-// let doublesCourtNum = 10
->>>>>>> babf7182044c37a4967bdfa11cf22bf15e79aa6f
 let doublesGroupNum = 4
 let doublesPairNum = 2
 
