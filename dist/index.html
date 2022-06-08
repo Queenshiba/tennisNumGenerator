@@ -16,12 +16,14 @@
     <div class="container">
         <h1>tennis number generator</h1>
         <div class="input-container">
+            <h3>Player Number</h3>
             <div class="number-input" id="player-wrap">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
                 <input id="playerInput" class="quantity bg-light" min="4" placeholder="0" name="quantity" value="4"
                     type="number">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
             </div>
+            <h3>Court Number</h3>
             <div class="number-input" id="court-wrap">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
                 <input id="courtInput" class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1"
