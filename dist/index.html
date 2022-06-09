@@ -16,24 +16,39 @@
     <div class="container">
         <h1>tennis number generator</h1>
         <div class="input-container">
-            <h3>Player Number</h3>
-            <div class="number-input" id="player-wrap">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-                <input id="playerInput" class="quantity bg-light" min="4" placeholder="0" name="quantity" value="4"
-                    type="number">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+            <div class="input-wrap">
+                <div class="input">
+                    <h3>Player Number</h3>
+                    <div class="number-input" id="player-wrap">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                        <input id="playerInput" class="quantity bg-light" min="4" placeholder="0" name="quantity"
+                            value="4" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                            class="plus">+</button>
+                    </div>
+                </div>
+
+
+
+                <div class="input">
+                    <h3>Court Number</h3>
+                    <div class="number-input" id="court-wrap">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                        <input id="courtInput" class="quantity bg-light" min="0" placeholder="0" name="quantity"
+                            value="1" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                            class="plus">+</button>
+                    </div>
+                </div>
+
             </div>
-            <h3>Court Number</h3>
-            <div class="number-input" id="court-wrap">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-                <input id="courtInput" class="quantity bg-light" min="0" placeholder="0" name="quantity" value="1"
-                    type="number">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+            <div class="btn-wrap">
+                <button class="btn" id="set-btn"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">SET<img
+                        src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
+                <button class="btn" id="reset-btn" type="reset"><img src="/dist/tennis-ball.png" class="tennisBall"
+                        alt="">RESET<img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
             </div>
-            <button class="btn" id="set-btn"><img src="/dist/tennis-ball.png" class="tennisBall" alt="">SET<img
-                    src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
-            <button class="btn" id="reset-btn" type="reset"><img src="/dist/tennis-ball.png" class="tennisBall"
-                    alt="">RESET<img src="/dist/tennis-ball.png" class="tennisBall" alt=""></button>
+
         </div>
 
         <div class="result-container">

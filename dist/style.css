@@ -21,7 +21,7 @@ body {
     align-items: center;
     /* justify-content: center; */
     width: 70%;
-    background:rgba(255,255,255, 0.6);
+    background: rgba(255, 255, 255, 0.6);
     min-height: 70vh;
 
 }
@@ -35,6 +35,24 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+.input-wrap {
+    /* background-color: #ccff00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 5%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+
 }
 
 input[type="number"] {
@@ -73,9 +91,11 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0;
     height: 30px;
 }
+
 #playerInput, #courtInput {
     width: 4rem;
 }
+
 .btn {
     display: flex;
     flex-direction: row;
@@ -148,7 +168,7 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;  
+    width: 100%;
 }
 
 .tennisBall {
