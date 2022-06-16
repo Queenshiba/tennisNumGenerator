@@ -264,8 +264,6 @@ let resetBtn = document.getElementById('reset-btn')
 resetBtn.addEventListener('click', () => { resetInputResult() })
 
 function resetInputResult() {
-    document.getElementById('playerInput').value
-    document.getElementById('courtInput').value
-    alert('test')
+    window.location.reload();
+    // alert('test')
 }
-// document.getElementById('playerInput').value.reset();
