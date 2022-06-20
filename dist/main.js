@@ -15,6 +15,8 @@ setBtn.addEventListener('click', () => { appendResult() })
 function appendResult() {
     let doublesPlayerNum = document.getElementById('playerInput').value
     let doublesCourtNum = document.getElementById('courtInput').value
+//     let doublesPlayerNum = 40
+// let doublesCourtNum = 10
     console.log(doublesPlayerNum)
     console.log(doublesCourtNum)
 
@@ -162,7 +164,7 @@ function getNumsPlayers(doublesPlayerNum) {
     }
     return doublesPlayerNumArr;
 }
-
+let doublesPlayerNumArr = getNumsPlayers(doublesPlayerNum)
 
 // make an array of court numbers
 function getNumsCourts(doublesCourtNum) {
@@ -182,7 +184,7 @@ function doublesPairGenerator(doublesPlayerNum) {
     }
     return doublespairArray
 }
-
+doublesPairGenerator(doublesPlayerNumArr)
 
 // first round 
 function firstRoundGropMaker(doublespairArray) {
@@ -236,8 +238,8 @@ function SecondRoundGrouping(secondRoundPairArray, doublesPlayerNum, doublesCour
     return firstHalfPair
 }
 // console.log(getNumsPlayers(doublesPlayerNum))
-let secondRoundGroupingArr = SecondRoundGrouping(doublesPairGenerator(getNumsPlayers(doublesPlayerNum)),doublesPlayerNum, doublesCourtNum)
-    // console.log(secondRoundGroupingArr)
+let secondRoundGroupingArr = SecondRoundGrouping(doublesPlayerNumArr ,doublesPlayerNum, doublesCourtNum)
+    console.log(secondRoundGroupingArr)
 
 function secondRoundGroupShuffled(secondRoundGroupingArr) {
     // console.log(secondRoundGroupingArr[0])
@@ -255,7 +257,7 @@ function secondRoundGroupShuffled(secondRoundGroupingArr) {
         // console.log(shuffledGroup)
 
 }
-// secondRoundGroupShuffled(secondRoundGroupingArr)
+secondRoundGroupShuffled(secondRoundGroupingArr)
 
 
 // reset btn
